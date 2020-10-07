@@ -1,2 +1,2 @@
-pip3 notify2
+pip3 install notify2
 pip3 install bs4
