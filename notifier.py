@@ -14,11 +14,13 @@ def check_for_discount():
     for item in items:
         item = item.strip("\n") #remove newline character from the url
         
-        doc = s.get(item).text
-        item = soup(doc, "html.parser")
-        special_price = item.findAll("div", {"class": "e-product-price__special"})
+        doc = s.get(item).text #get html document
+        html = soup(doc, "html.parser")
+        special_price = html.findAll("div", {"class": "e-product-price__special"})
         if special_price != []:
             print ("product has discount")
+            n.update("discount!",item)
+            n.show()
         else:
             print("no discount")
 
@@ -26,5 +28,3 @@ notify2.init("discount notifier")
 n = notify2.Notification("", "")
 
 check_for_discount()
-#TODO show notification for products
-#n.show()
