@@ -22,3 +22,4 @@ For example:
 
 now line 18 should be:
 **special_price = html.findAll("div", {"class": "pdpPrice"})**
+* replace links on wishlist.txt with your preferred items links.
